@@ -278,9 +278,8 @@ Exit
 }
 
 def is_palindrome? string
-  # A palindrome is a word that reads the same backwards and forwards, like 'racecar'
-  # This function should return true if the string is a palindrome and false if not
-  # Note: single letter words typically do not count as palindromes
+  letters = str.downcase.scan(/\w/)
+  letters == letters.reverse
 end
 
 # Find / compute the following things from the corpus of text by filling in the blanks
