@@ -12,6 +12,7 @@ class Person
   # Implement the following functions
 
   def name
+    puts "#{@first_name}, #{@last_name}"
   end
 
   def shared_interests_with other_person
