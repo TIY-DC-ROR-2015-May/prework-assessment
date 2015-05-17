@@ -5,10 +5,22 @@ This is a collection of exercises to make sure that you have internalized key co
 # Exercises
 
 1. Clone this repository, using the *SSH* clone URL
-2. What files are in your home directory? How did you determine that?
-3. Navigate into the `3` directory. How many files are there? What is in the `gunner-lind.txt` file? What commands did you use to determine those? (You may be interested to read the `populate_directory.rb` file to see how these were generated.)
+2. What files are in your home directory?
+   ##prework-assesment## 
+   How did you determine that?
+   `ls -l`
+3. Navigate into the `3` directory. 
+   How many files are there?
+   ##40##
+   What is in the `gunner-lind.txt` file?
+   ##Integers '5548767243'##
+   What commands did you use to determine those?
+   `ls -1 | wc -l`
+   `cat 3/gunner-lind.txt`
+    (You may be interested to read the `populate_directory.rb` file to see how these were generated.)
 4. `4.rb` contains the start of a text analysis program. Complete it, following the included comments.
 5. Write a program that asks the user to type a sentence and sorts it (so `if you type this` becomes `   efhiiopsttuyy`).
+	def 
 6. `6.rb` contains the start of a very rough social network. Flesh it out, following the outline and comments.
 
 
