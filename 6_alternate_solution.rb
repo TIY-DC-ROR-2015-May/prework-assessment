@@ -19,11 +19,7 @@ class Person
   def shared_interests_with other_person
     @share = []
     @favorite_things.each do |fav|
-      puts "self fav is #{fav}"
-      puts fav.class.name
-      # puts "others favs are #{other_person.favorite_things}"
-      # puts "match? #{other_person.favorite_things.include?(fav)}"
-      if other_person.favorite_things.include?("math") then
+      if other_person.favorite_things.include?(fav) then
         puts "fav is #{fav}"
         puts fav.class.name
         @share << fav
@@ -52,12 +48,9 @@ you = Person.new first_name, last_name
 puts "Cool. Welcome, #{you.name}."
 puts "What are some of your favorite things? (separated with ,-s)"
 favs = gets.chomp
-favs.split.each do |fav|
+favs.split(", ").each do |fav|
   you.add_favorite fav
 end
-
-# TODO: finish this ...
-# find our shared interests, if any, and print out something about them
 
 puts "Shared likes #{(you.shared_interests_with james).to_s}"
 
