@@ -1,3 +1,5 @@
+require 'pry'
+
 Corpus = %{
 ROMEO
 He jests at scars that never felt a wound.
@@ -281,20 +283,49 @@ def is_palindrome? string
   # A palindrome is a word that reads the same backwards and forwards, like 'racecar'
   # This function should return true if the string is a palindrome and false if not
   # Note: single letter words typically do not count as palindromes
+  if string.length < 2
+    return false
+  end
+
+  return string == string.reverse
 end
 
 # Find / compute the following things from the corpus of text by filling in the blanks
 # (though feel free to add more lines if it would be helpful)
 
-words        = __
-unique_words = __
+words        = Corpus.split
+unique_words = words.uniq.count
 puts "There are #{words.count} words (#{unique_words} unique words) in the text"
 
-pal = __
+# Option 1
+palindromes = []
+words.each do |word|
+  if is_palindrome? word
+    palindromes.push word
+  end
+end
+# palindromes is a list of _all_ the palindromes
+# palindromes = words.select { |word| is_palindrome? word }
+pal = palindromes.first
+
+# Option 2
+pal = words.find { |word| is_palindrome? word }
 puts "The corpus contains the following palindrome: #{pal}"
 
-speak_count = __
+speak_count = 0
+words.each do |word|
+  if word == "speak"
+    speak_count = speak_count + 1
+  end
+end
+# speak_count = words.count("speak")
 puts "The word 'speak' appears #{speak_count} times."
 
-longest_word = __
+# longest_word = words.max_by { |word| word.length }
+longest_word = words.first
+words.each do |word|
+  if word.length > longest_word.length
+    longest_word = word
+  end
+end
 puts "The longest word in the corpus is #{longest_word}"
