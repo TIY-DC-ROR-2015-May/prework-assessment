@@ -27,4 +27,4 @@ $ sublime gunner-lind.txt
 
 5.  Program written in a file called 5.rb
 
-6.  Commpleted in line inside 6.rb
+6.  Commpleted in line inside 6.rb (I made an alternative, because I originally implemented the shared_interests_with method in a different way and during debugging I found a better way so I kept this one as a backup/alternate solution)

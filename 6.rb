@@ -15,10 +15,7 @@ class Person
   end
 
   def shared_interests_with other_person
-    # puts "his favs #{other_person.favorite_things}"
-    # puts "my favs #{@favorite_things}"
     share = other_person.favorite_things & @favorite_things
-    #puts "inside method shared is #{share}"
     return share
   end
 end
