@@ -286,7 +286,7 @@ end
 # Find / compute the following things from the corpus of text by filling in the blanks
 # (though feel free to add more lines if it would be helpful)
 
-words        = __
+words        = ["help"]
 unique_words = __
 puts "There are #{words.count} words (#{unique_words} unique words) in the text"
 
