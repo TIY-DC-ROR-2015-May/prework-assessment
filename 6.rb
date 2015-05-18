@@ -47,7 +47,10 @@ favs.split(", ").each do |fav|
   you.add_favorite fav
 end
 
-
-puts "Shared likes #{(you.shared_interests_with james)}"
+common = you.shared_interests_with james
+if common.length == 0
+  puts "Oh, no we have nothing in common!"
+else
+  puts "The things we both like are #{(common)}"
 
 
