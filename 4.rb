@@ -278,23 +278,35 @@ Exit
 }
 
 def is_palindrome? string
-  # A palindrome is a word that reads the same backwards and forwards, like 'racecar'
-  # This function should return true if the string is a palindrome and false if not
-  # Note: single letter words typically do not count as palindromes
+	if string.length > 1
+		string == string.reverse
+	end
 end
+
 
 # Find / compute the following things from the corpus of text by filling in the blanks
 # (though feel free to add more lines if it would be helpful)
 
-words        = __
-unique_words = __
+words  = Corpus.split
+unique_words = words.uniq.count
 puts "There are #{words.count} words (#{unique_words} unique words) in the text"
 
-pal = __
+pal = ""
+words.each do |word|
+	if is_palindrome? word then
+		pal << word
+	end
+end
 puts "The corpus contains the following palindrome: #{pal}"
 
-speak_count = __
+speak_count = words.count('speak')
 puts "The word 'speak' appears #{speak_count} times."
 
-longest_word = __
+longest_word = ""
+words.each do |word|
+	if word.length > longest_word.length then
+		longest_word = word
+	end
+end
+
 puts "The longest word in the corpus is #{longest_word}"

@@ -1,5 +1,5 @@
 class Person
-  attr_accessor :favorite_things
+  attr_reader :favorite_things
   def initialize first_name, last_name
     @first_name      = first_name
     @last_name       = last_name
@@ -10,13 +10,23 @@ class Person
     @favorite_things.push thing
   end
 
+  # Implement the following functions
+
   def name
     "#{@first_name}, #{@last_name}"
   end
 
   def shared_interests_with other_person
-    share = other_person.favorite_things & @favorite_things
-    return share
+    @share = []
+    @favorite_things.each do |fav|
+      if other_person.favorite_things.include?(fav) then
+        puts "fav is #{fav}"
+        puts fav.class.name
+        @share << fav
+        puts "Shared is currently #{@share}"
+      end
+    end
+    return @share
   end
 end
 
@@ -38,16 +48,10 @@ you = Person.new first_name, last_name
 puts "Cool. Welcome, #{you.name}."
 puts "What are some of your favorite things? (separated with ,-s)"
 favs = gets.chomp
-puts "favs is #{favs}"
-puts "favs split is #{favs.split}"
 favs.split(", ").each do |fav|
   you.add_favorite fav
 end
 
-common = you.shared_interests_with james
-if common.length == 0
-  puts "Oh, no we have nothing in common!"
-else
-  puts "The things we both like are #{(common)}"
+puts "Shared likes #{(you.shared_interests_with james).to_s}"
 
 
